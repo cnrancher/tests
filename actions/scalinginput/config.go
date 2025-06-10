@@ -1,9 +1,12 @@
 package scalinginput
 
 import (
+	"github.com/rancher/shepherd/extensions/clusters/ack"
 	"github.com/rancher/shepherd/extensions/clusters/aks"
+	"github.com/rancher/shepherd/extensions/clusters/cce"
 	"github.com/rancher/shepherd/extensions/clusters/eks"
 	"github.com/rancher/shepherd/extensions/clusters/gke"
+	"github.com/rancher/shepherd/extensions/clusters/tke"
 	"github.com/rancher/tests/actions/machinepools"
 	nodepools "github.com/rancher/tests/actions/rke1/nodepools"
 	corev1 "k8s.io/api/core/v1"
@@ -39,4 +42,8 @@ type Config struct {
 	EKSNodePool  *eks.NodeGroupConfig `json:"eksNodePool" yaml:"eksNodePool"`
 	GKENodePool  *gke.NodePool        `json:"gkeNodePool" yaml:"gkeNodePool"`
 	NodeProvider string               `json:"nodeProvider" yaml:"nodeProvider"`
+
+	ACKNodePool *ack.NodePoolInfo   `json:"ackNodePool" yaml:"ackNodePool"` // PANDARIA
+	CCENodePool *cce.NodePool       `json:"cceNodePool" yaml:"cceNodePool"` // PANDARIA
+	TKENodePool *tke.NodePoolDetail `json:"tkeNodePool" yaml:"tkeNodePool"` // PANDARIA
 }

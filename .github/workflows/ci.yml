@@ -35,7 +35,14 @@ jobs:
       - name: Generate Golang
         run: |
           export PATH=$PATH:/home/runner/go/bin/
-      
+
+      - name: Setup GOPRIVATE # PANDARIA
+        env:
+          RD_ONLY_GH_TOKEN: ${{ secrets.RD_ONLY_GH_TOKEN }}
+        run: |
+          go env -w GOPRIVATE=github.com/cnrancher
+          git config --global url."https://oauth2:${RD_ONLY_GH_TOKEN}@github.com/cnrancher".insteadOf "https://github.com/cnrancher"
+
       - name: Verify Go Mod
         run: ./.github/scripts/check-gomod.sh
 

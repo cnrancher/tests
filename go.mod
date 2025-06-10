@@ -11,8 +11,9 @@ replace (
 	github.com/docker/docker => github.com/docker/docker v20.10.27+incompatible // rancher-machine requires a replace is set
 
 	github.com/openshift/api => github.com/openshift/api v0.0.0-20191219222812-2987a591a72c
-	github.com/rancher/rancher/pkg/apis => github.com/rancher/rancher/pkg/apis v0.0.0-20250212213103-5c3550f55322
-	github.com/rancher/rancher/pkg/client => github.com/rancher/rancher/pkg/client v0.0.0-20250212213103-5c3550f55322
+	github.com/rancher/rancher/pkg/apis => github.com/cnrancher/pandaria/pkg/apis v0.0.0-20241212071329-8023902c76f5 // PANDARIA
+	github.com/rancher/rancher/pkg/client => github.com/cnrancher/pandaria/pkg/client v0.0.0-20250606022950-6c99d663158f // PANDARIA
+	github.com/rancher/shepherd => github.com/cnrancher/shepherd v0.0.0-20250610021847-9d2843a9d14d // PANDARIA
 
 	github.com/rancher/tests/actions => ./actions
 	go.opentelemetry.io/contrib/instrumentation/google.golang.org/grpc/otelgrpc => go.opentelemetry.io/contrib/instrumentation/google.golang.org/grpc/otelgrpc v0.53.0
@@ -78,8 +79,8 @@ require (
 	github.com/Masterminds/semver/v3 v3.3.0
 	github.com/Masterminds/sprig/v3 v3.3.0 // indirect
 	github.com/aws/aws-sdk-go v1.55.5
-	github.com/aws/aws-sdk-go-v2 v1.36.1 // indirect
-	github.com/aws/aws-sdk-go-v2/config v1.29.6
+	github.com/aws/aws-sdk-go-v2 v1.36.3 // indirect
+	github.com/aws/aws-sdk-go-v2/config v1.29.14
 	github.com/aws/aws-sdk-go-v2/service/s3 v1.61.2
 	github.com/blang/semver v3.5.1+incompatible // indirect
 	github.com/coreos/go-semver v0.3.1 // indirect
@@ -100,32 +101,32 @@ require (
 	github.com/prometheus/client_golang v1.20.5 // indirect
 	github.com/prometheus/client_model v0.6.1 // indirect
 	github.com/prometheus/common v0.55.0
-	github.com/rancher/aks-operator v1.11.0-rc.4 // indirect
+	github.com/rancher/aks-operator v1.11.2 // indirect
 	github.com/rancher/apiserver v0.5.2 // indirect
 	github.com/rancher/backup-restore-operator v1.2.1
-	github.com/rancher/eks-operator v1.11.0-rc.3 // indirect
-	github.com/rancher/fleet/pkg/apis v0.12.0-alpha.2
-	github.com/rancher/gke-operator v1.11.0-rc.2 // indirect
-	github.com/rancher/lasso v0.2.1 // indirect
+	github.com/rancher/eks-operator v1.11.2 // indirect
+	github.com/rancher/fleet/pkg/apis v0.12.3
+	github.com/rancher/gke-operator v1.11.2 // indirect
+	github.com/rancher/lasso v0.2.2 // indirect
 	github.com/rancher/machine v0.15.0-rancher126 // indirect
 	github.com/rancher/norman v0.5.2
-	github.com/rancher/rke v1.8.0-rc.2 // indirect
+	github.com/rancher/rke v1.8.3 // indirect
 	github.com/rancher/system-upgrade-controller/pkg/apis v0.0.0-20240301001845-4eacc2dabbde // indirect
 	github.com/rancher/wrangler v1.1.2 // indirect
-	github.com/rancher/wrangler/v3 v3.2.0-rc.3 // indirect
+	github.com/rancher/wrangler/v3 v3.2.1 // indirect
 	github.com/sirupsen/logrus v1.9.3
 	github.com/stretchr/testify v1.10.0
-	golang.org/x/crypto v0.33.0
-	golang.org/x/net v0.35.0
-	golang.org/x/oauth2 v0.26.0 // indirect
-	golang.org/x/sync v0.11.0 // indirect
-	golang.org/x/text v0.22.0 // indirect
+	golang.org/x/crypto v0.38.0
+	golang.org/x/net v0.40.0
+	golang.org/x/oauth2 v0.29.0 // indirect
+	golang.org/x/sync v0.14.0 // indirect
+	golang.org/x/text v0.25.0 // indirect
 	google.golang.org/grpc v1.70.0 // indirect
 	gopkg.in/yaml.v2 v2.4.0
 	gopkg.in/yaml.v3 v3.0.1 // indirect
-	k8s.io/api v0.32.2
+	k8s.io/api v0.32.4
 	k8s.io/apiextensions-apiserver v0.32.2
-	k8s.io/apimachinery v0.32.2
+	k8s.io/apimachinery v0.32.4
 	k8s.io/apiserver v0.32.2 // indirect
 	k8s.io/cli-runtime v0.32.2 // indirect
 	k8s.io/client-go v12.0.0+incompatible
@@ -133,42 +134,53 @@ require (
 	k8s.io/kube-openapi v0.30.0 // indirect
 	k8s.io/kubectl v0.32.2 // indirect
 	k8s.io/kubernetes v1.32.2 // indirect
-	k8s.io/utils v0.0.0-20241104100929-3ea5e8cea738 // indirect
+	k8s.io/utils v0.0.0-20250502105355-0f33e8f1c979 // indirect
 	sigs.k8s.io/cluster-api v1.9.5 // indirect
 	sigs.k8s.io/yaml v1.4.0 // indirect
 )
 
 require (
 	dario.cat/mergo v1.0.1 // indirect
+	github.com/aliyun/alibaba-cloud-sdk-go v1.63.88 // indirect
 	github.com/aws/aws-sdk-go-v2/aws/protocol/eventstream v1.6.4 // indirect
-	github.com/aws/aws-sdk-go-v2/credentials v1.17.59 // indirect
-	github.com/aws/aws-sdk-go-v2/feature/ec2/imds v1.16.28 // indirect
-	github.com/aws/aws-sdk-go-v2/internal/configsources v1.3.32 // indirect
-	github.com/aws/aws-sdk-go-v2/internal/endpoints/v2 v2.6.32 // indirect
-	github.com/aws/aws-sdk-go-v2/internal/ini v1.8.2 // indirect
+	github.com/aws/aws-sdk-go-v2/credentials v1.17.67 // indirect
+	github.com/aws/aws-sdk-go-v2/feature/ec2/imds v1.16.30 // indirect
+	github.com/aws/aws-sdk-go-v2/internal/configsources v1.3.34 // indirect
+	github.com/aws/aws-sdk-go-v2/internal/endpoints/v2 v2.6.34 // indirect
+	github.com/aws/aws-sdk-go-v2/internal/ini v1.8.3 // indirect
 	github.com/aws/aws-sdk-go-v2/internal/v4a v1.3.17 // indirect
-	github.com/aws/aws-sdk-go-v2/service/internal/accept-encoding v1.12.2 // indirect
+	github.com/aws/aws-sdk-go-v2/service/internal/accept-encoding v1.12.3 // indirect
 	github.com/aws/aws-sdk-go-v2/service/internal/checksum v1.3.19 // indirect
-	github.com/aws/aws-sdk-go-v2/service/internal/presigned-url v1.12.13 // indirect
+	github.com/aws/aws-sdk-go-v2/service/internal/presigned-url v1.12.15 // indirect
 	github.com/aws/aws-sdk-go-v2/service/internal/s3shared v1.17.17 // indirect
-	github.com/aws/aws-sdk-go-v2/service/sso v1.24.15 // indirect
-	github.com/aws/aws-sdk-go-v2/service/ssooidc v1.28.14 // indirect
-	github.com/aws/aws-sdk-go-v2/service/sts v1.33.14 // indirect
+	github.com/aws/aws-sdk-go-v2/service/sso v1.25.3 // indirect
+	github.com/aws/aws-sdk-go-v2/service/ssooidc v1.30.1 // indirect
+	github.com/aws/aws-sdk-go-v2/service/sts v1.33.19 // indirect
 	github.com/aws/smithy-go v1.22.2 // indirect
+	github.com/cnrancher/ack-operator v0.0.5-0.20250401014136-d5f811965a0c // indirect
+	github.com/cnrancher/cce-operator v0.7.0 // indirect
+	github.com/cnrancher/tke-operator v0.0.0-20250217080435-aa3d048bb4c7 // indirect
 	github.com/containerd/cgroups/v3 v3.0.2 // indirect
 	github.com/containerd/errdefs v0.3.0 // indirect
 	github.com/fxamacker/cbor/v2 v2.7.0 // indirect
 	github.com/hashicorp/go-multierror v1.1.1 // indirect
+	github.com/huaweicloud/huaweicloud-sdk-go-v3 v0.1.144 // indirect
 	github.com/klauspost/compress v1.17.9 // indirect
 	github.com/kr/fs v0.1.0 // indirect
 	github.com/moby/sys/user v0.3.0 // indirect
 	github.com/openshift/api v0.0.0 // indirect
 	github.com/openshift/custom-resource-status v1.1.2 // indirect
+	github.com/opentracing/opentracing-go v1.2.1-0.20220228012449-10b1cf09e00b // indirect
 	github.com/pborman/uuid v1.2.1 // indirect
+	github.com/tencentcloud/tencentcloud-sdk-go/tencentcloud/common v1.0.715 // indirect
+	github.com/tencentcloud/tencentcloud-sdk-go/tencentcloud/cvm v1.0.715 // indirect
+	github.com/tjfoc/gmsm v1.4.1 // indirect
 	github.com/x448/float16 v0.8.4 // indirect
+	go.mongodb.org/mongo-driver v1.13.1 // indirect
 	google.golang.org/genproto/googleapis/api v0.0.0-20241209162323-e6fa225c2576 // indirect
 	google.golang.org/genproto/googleapis/rpc v0.0.0-20250207221924-e9438ea467c6 // indirect
 	gopkg.in/evanphx/json-patch.v4 v4.12.0 // indirect
+	gopkg.in/ini.v1 v1.67.0 // indirect
 	k8s.io/pod-security-admission v0.32.2 // indirect
 	kubevirt.io/api v1.1.1 // indirect
 	kubevirt.io/containerized-data-importer-api v1.57.0-alpha1 // indirect
@@ -202,7 +214,7 @@ require (
 	github.com/gogo/protobuf v1.3.2 // indirect
 	github.com/golang/groupcache v0.0.0-20210331224755-41bb18bfe9da // indirect
 	github.com/google/btree v1.1.2 // indirect
-	github.com/google/go-cmp v0.6.0 // indirect
+	github.com/google/go-cmp v0.7.0 // indirect
 	github.com/google/gofuzz v1.2.0 // indirect
 	github.com/google/shlex v0.0.0-20191202100458-e7afc7fbc510 // indirect
 	github.com/google/uuid v1.6.0 // indirect
@@ -249,8 +261,8 @@ require (
 	go.opentelemetry.io/otel/trace v1.34.0 // indirect
 	go.uber.org/multierr v1.11.0 // indirect
 	go.uber.org/zap v1.27.0 // indirect
-	golang.org/x/sys v0.30.0 // indirect
-	golang.org/x/term v0.29.0 // indirect
+	golang.org/x/sys v0.33.0 // indirect
+	golang.org/x/term v0.32.0 // indirect
 	golang.org/x/time v0.10.0 // indirect
 	google.golang.org/protobuf v1.36.5 // indirect
 	gopkg.in/inf.v0 v0.9.1 // indirect

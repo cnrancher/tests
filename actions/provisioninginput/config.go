@@ -34,6 +34,7 @@ const (
 	VsphereProviderName      ProviderName = "vsphere"
 	VsphereCloudProviderName ProviderName = "rancher-vsphere"
 	ExternalProviderName     ProviderName = "external"
+	AliyunProviderName       ProviderName = "aliyun" // PANDARIA
 )
 
 var AllRolesMachinePool = MachinePools{

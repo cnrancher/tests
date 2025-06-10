@@ -1,3 +1,7 @@
+//go:build exclude
+
+// PANDARIA: Ignored
+
 package grb
 
 import (
