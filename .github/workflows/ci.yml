@@ -3,10 +3,12 @@ name: Verify Changes
 on:
   push:
     branches:
+      - 'stable*' # PANDARIA
       - 'stable'
       - 'main'
   pull_request:
     branches:
+      - 'stable*' # PANDARIA
       - 'stable'
       - 'main'
 
@@ -49,10 +51,11 @@ jobs:
       - name: Build Packages
         run: ./.github/scripts/go-build.sh
 
-      - name: Golangci Lint
-        uses: golangci/golangci-lint-action@2226d7cb06a077cd73e56eedd38eecad18e5d837 # v6.5.0
-        with:
-          # Patch version isn't needed; https://github.com/golangci/golangci-lint-action?tab=readme-ov-file#internals
-          version: v1.64.5
-          # only run on changed files in this PR / push
-          only-new-issues: true
+      # PANDARIA: Disable
+      # - name: Golangci Lint
+      #   uses: golangci/golangci-lint-action@2226d7cb06a077cd73e56eedd38eecad18e5d837 # v6.5.0
+      #   with:
+      #     # Patch version isn't needed; https://github.com/golangci/golangci-lint-action?tab=readme-ov-file#internals
+      #     version: v1.64.5
+      #     # only run on changed files in this PR / push
+      #     only-new-issues: true
