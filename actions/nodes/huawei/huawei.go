@@ -2,6 +2,7 @@ package huawei
 
 import (
 	"errors"
+	"os"
 	"strings"
 	"time"
 
@@ -196,6 +197,10 @@ func CreateNodes(client *rancher.Client, rolesPerPool []string, quantityPerPool 
 			}
 			// wait for docker installed by cloud-init
 			if err = wait.ExponentialBackoff(backoff, func() (bool, error) {
+				if os.Getenv("SKIP_HUAWEI_NODE_WAIT_DOCKER") == "true" {
+					logrus.Infof("SKIP_HUAWEI_NODE_WAIT_DOCKER is set, skip waiting for docker")
+					return true, nil
+				}
 				_, err := node.ExecuteCommand("docker ps")
 				if err != nil {
 					logrus.Infof("wait for server [%v] install docker", server.Server.Name)
