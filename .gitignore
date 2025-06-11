@@ -3,3 +3,6 @@
 .idea/
 .kube/
 *.pem
+
+# PANDARIA
+*.xml

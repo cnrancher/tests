@@ -11,6 +11,7 @@ replace (
 	github.com/docker/docker => github.com/docker/docker v20.10.27+incompatible // rancher-machine requires a replace is set
 
 	github.com/openshift/api => github.com/openshift/api v0.0.0-20191219222812-2987a591a72c
+	github.com/rancher/rancher => github.com/cnrancher/pandaria v0.0.0-20250606022950-6c99d663158f // PANDARIA
 	github.com/rancher/rancher/pkg/apis => github.com/cnrancher/pandaria/pkg/apis v0.0.0-20241212071329-8023902c76f5 // PANDARIA
 	github.com/rancher/rancher/pkg/client => github.com/cnrancher/pandaria/pkg/client v0.0.0-20250606022950-6c99d663158f // PANDARIA
 	github.com/rancher/shepherd => github.com/cnrancher/shepherd v0.0.0-20250610021847-9d2843a9d14d // PANDARIA
@@ -70,8 +71,8 @@ require (
 require (
 	github.com/harvester/harvester v1.4.1
 	github.com/rancher/rancher v0.0.0-20250228094653-6e82729d08cf
-	github.com/rancher/shepherd v0.0.0-20250225165610-3b5c95e0e613
-	github.com/rancher/tests/actions v0.0.0-00010101000000-000000000000
+	github.com/rancher/shepherd v0.0.0-20250314164437-2d4a7f28d9d4
+	github.com/rancher/tests/actions v0.0.0-20250322025624-67c9988afa52
 
 )
 
@@ -108,10 +109,10 @@ require (
 	github.com/rancher/fleet/pkg/apis v0.12.3
 	github.com/rancher/gke-operator v1.11.2 // indirect
 	github.com/rancher/lasso v0.2.2 // indirect
-	github.com/rancher/machine v0.15.0-rancher126 // indirect
+	github.com/rancher/machine v0.15.0-rancher127 // indirect
 	github.com/rancher/norman v0.5.2
 	github.com/rancher/rke v1.8.3 // indirect
-	github.com/rancher/system-upgrade-controller/pkg/apis v0.0.0-20240301001845-4eacc2dabbde // indirect
+	github.com/rancher/system-upgrade-controller/pkg/apis v0.0.0-20250306000150-b1a9781accab // indirect
 	github.com/rancher/wrangler v1.1.2 // indirect
 	github.com/rancher/wrangler/v3 v3.2.1 // indirect
 	github.com/sirupsen/logrus v1.9.3
@@ -167,6 +168,7 @@ require (
 	github.com/huaweicloud/huaweicloud-sdk-go-v3 v0.1.144 // indirect
 	github.com/klauspost/compress v1.17.9 // indirect
 	github.com/kr/fs v0.1.0 // indirect
+	github.com/kubereboot/kured v1.13.1 // indirect
 	github.com/moby/sys/user v0.3.0 // indirect
 	github.com/openshift/api v0.0.0 // indirect
 	github.com/openshift/custom-resource-status v1.1.2 // indirect
