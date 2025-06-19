@@ -37,6 +37,7 @@ type NodeTemplate struct {
 	HarvesterNodeTemplateConfig     *HarvesterNodeTemplateConfig     `json:"harvesterConfig" yaml:"harvesterConfig,omitempty"`
 	LinodeNodeTemplateConfig        *LinodeNodeTemplateConfig        `json:"linodeConfig" yaml:"linodeConfig,omitempty"`
 	VmwareVsphereNodeTemplateConfig *VmwareVsphereNodeTemplateConfig `json:"vmwarevsphereConfig" yaml:"vmwarevsphereConfig,omitempty"`
+	AliyunECSNodeTemplateConfig     *AliyunECSNodeTemplateConfig     `json:"aliyunecsConfig" yaml:"aliyunecsConfig,omitempty"`
 	Name                            string                           `json:"name,omitempty" yaml:"name,omitempty"`
 	NamespaceID                     string                           `json:"namespaceId,omitempty" yaml:"namespaceId,omitempty"`
 	Removed                         string                           `json:"removed,omitempty" yaml:"removed,omitempty"`

@@ -9,6 +9,7 @@ import (
 	"github.com/rancher/shepherd/extensions/cloudcredentials/aws"
 	"github.com/rancher/shepherd/extensions/cloudcredentials/azure"
 	"github.com/rancher/shepherd/extensions/cloudcredentials/digitalocean"
+	"github.com/rancher/shepherd/extensions/cloudcredentials/ecs"
 	"github.com/rancher/shepherd/extensions/cloudcredentials/harvester"
 	"github.com/rancher/shepherd/extensions/cloudcredentials/linode"
 	"github.com/rancher/shepherd/extensions/cloudcredentials/vsphere"
@@ -17,6 +18,7 @@ import (
 	"k8s.io/apimachinery/pkg/apis/meta/v1/unstructured"
 
 	"github.com/rancher/tests/actions/rke1/nodetemplates"
+	r1aliyun "github.com/rancher/tests/actions/rke1/nodetemplates/aliyun"
 	r1aws "github.com/rancher/tests/actions/rke1/nodetemplates/aws"
 	r1azure "github.com/rancher/tests/actions/rke1/nodetemplates/azure"
 	r1harvester "github.com/rancher/tests/actions/rke1/nodetemplates/harvester"
@@ -94,6 +96,15 @@ func CreateProvider(name string) Provider {
 			Roles:                              machinepools.GetVsphereMachineRoles(),
 		}
 		return provider
+	case name == provisioninginput.AliyunProviderName.String():
+		provider := Provider{
+			Name:                               provisioninginput.AliyunProviderName,
+			MachineConfigPoolResourceSteveType: machinepools.ECSPoolType,
+			MachinePoolFunc:                    machinepools.NewECSMachineConfig,
+			CloudCredFunc:                      ecs.CreateECSCloudCredentials,
+			Roles:                              machinepools.GetECSMachineRoles(),
+		}
+		return provider
 	default:
 		panic(fmt.Sprintf("Provider:%v not found", name))
 	}
@@ -139,6 +150,12 @@ func CreateRKE1Provider(name string) RKE1Provider {
 		provider := RKE1Provider{
 			Name:             provisioninginput.VsphereProviderName,
 			NodeTemplateFunc: r1vsphere.CreateVSphereNodeTemplate,
+		}
+		return provider
+	case name == provisioninginput.AliyunProviderName.String():
+		provider := RKE1Provider{
+			Name:             provisioninginput.AliyunProviderName,
+			NodeTemplateFunc: r1aliyun.CreateAliyunECSNodeTemplate,
 		}
 		return provider
 	default:
