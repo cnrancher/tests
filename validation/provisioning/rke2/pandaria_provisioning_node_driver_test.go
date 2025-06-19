@@ -9,7 +9,7 @@ import (
 )
 
 func (r *RKE2NodeDriverProvisioningTestSuite) TestPandariaProvisioningRKE2Cluster() {
-	nodeRoles0 := []provisioninginput.MachinePools{provisioninginput.EtcdMachinePool, provisioninginput.ControlPlaneMachinePool, provisioninginput.WorkerMachinePool}
+	nodeRoles0 := []provisioninginput.MachinePools{provisioninginput.AllRolesMachinePool}
 
 	tests := []struct {
 		name         string

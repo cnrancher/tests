@@ -9,7 +9,7 @@ import (
 )
 
 func (k *K3SNodeDriverProvisioningTestSuite) TestProvisioningK3SClusterStandardUser() {
-	nodeRoles0 := []provisioningInput.MachinePools{provisioningInput.EtcdMachinePool, provisioningInput.ControlPlaneMachinePool, provisioningInput.WorkerMachinePool}
+	nodeRoles0 := []provisioningInput.MachinePools{provisioningInput.AllRolesMachinePool}
 
 	tests := []struct {
 		name         string
