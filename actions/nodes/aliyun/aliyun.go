@@ -175,10 +175,11 @@ func CreateNodes(client *rancher.Client, rolesPerPool []string, quantityPerPool 
 			config.AliyunUser = defaultSSHUser
 		}
 		ecsNode := &nodes.Node{
-			NodeID:          response.InstanceId,
-			PublicIPAddress: c.getIP(instance),
-			SSHUser:         config.AliyunUser,
-			SSHKey:          sshKey,
+			NodeID:           response.InstanceId,
+			PublicIPAddress:  c.getIP(instance),
+			PrivateIPAddress: c.getPrivateIP(instance),
+			SSHUser:          config.AliyunUser,
+			SSHKey:           sshKey,
 		}
 		ecsNodes = append(ecsNodes, ecsNode)
 	}
@@ -225,6 +226,13 @@ func (c *Client) getIP(inst *ecs.DescribeInstanceAttributeResponse) string {
 	}
 	if len(inst.EipAddress.IpAddress) > 0 {
 		return inst.EipAddress.IpAddress
+	}
+	return ""
+}
+
+func (c *Client) getPrivateIP(instance *ecs.DescribeInstanceAttributeResponse) string {
+	if len(instance.VpcAttributes.PrivateIpAddress.IpAddress) > 0 {
+		return instance.VpcAttributes.PrivateIpAddress.IpAddress[0]
 	}
 	return ""
 }
