@@ -1488,8 +1488,8 @@ github.com/cnrancher/pandaria v0.0.0-20250606022950-6c99d663158f h1:5gW+EqwRuTdT
 github.com/cnrancher/pandaria v0.0.0-20250606022950-6c99d663158f/go.mod h1:zJcEqiUTKUbVGXc/jzW50LrsQida4nswJROc1lzWvu8=
 github.com/cnrancher/pandaria/pkg/apis v0.0.0-20241212071329-8023902c76f5 h1:r/QobeWURtcRp93xx0QSkNXcWXF09sSGkZBAWfslcbo=
 github.com/cnrancher/pandaria/pkg/apis v0.0.0-20241212071329-8023902c76f5/go.mod h1:UQmO1sy1CxQkKggVsVdEH4Lj0tUxUizhf0gpYwVGuMo=
-github.com/cnrancher/shepherd v0.0.0-20250612043154-66f4eef65a16 h1:Ro5YqhZdjHaNEIKveLaM0GF0aLryOI54Uu7L77VTnUA=
-github.com/cnrancher/shepherd v0.0.0-20250612043154-66f4eef65a16/go.mod h1:/an9iOjr6fiXqVrUcnbuJbkcCwxZ5tRcy1vK085oaBg=
+github.com/cnrancher/shepherd v0.0.0-20250620064708-cc14136eb2be h1:3yiAiyWnak2pOPIFEZxv42R9/ap9Zp2b2+mqwr4twis=
+github.com/cnrancher/shepherd v0.0.0-20250620064708-cc14136eb2be/go.mod h1:/an9iOjr6fiXqVrUcnbuJbkcCwxZ5tRcy1vK085oaBg=
 github.com/cnrancher/tke-operator v0.0.0-20250217080435-aa3d048bb4c7 h1:tQZRhiH3n7XxE+ICORiA2GcHU6Cu7iRLO+axYreCrzc=
 github.com/cnrancher/tke-operator v0.0.0-20250217080435-aa3d048bb4c7/go.mod h1:6BBn0q7fYrFAJALciJP4+oYLU3REYS1PvpQUP19HUZw=
 github.com/cockroachdb/datadriven v1.0.2/go.mod h1:a9RdTaap04u637JoCzcUoIcDmvwSUtcUFtT/C3kJlTU=
