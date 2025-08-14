@@ -6,3 +6,6 @@
 
 # PANDARIA
 *.xml
+/vendor
+tmp_*
+config.yaml
