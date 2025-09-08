@@ -7,12 +7,15 @@ import (
 
 	"github.com/rancher/shepherd/clients/rancher"
 	management "github.com/rancher/shepherd/clients/rancher/generated/management/v3"
+	"github.com/rancher/shepherd/extensions/clusters/cce"
 	"github.com/rancher/shepherd/extensions/users"
 	password "github.com/rancher/shepherd/extensions/users/passwordgenerator"
+	"github.com/rancher/shepherd/pkg/config"
 	namegen "github.com/rancher/shepherd/pkg/namegenerator"
 	"github.com/rancher/shepherd/pkg/session"
 	"github.com/rancher/tests/actions/provisioning"
 	provisioningInput "github.com/rancher/tests/actions/provisioninginput"
+	"github.com/rancher/tests/actions/reports"
 	"github.com/stretchr/testify/require"
 	"github.com/stretchr/testify/suite"
 )
@@ -68,7 +71,11 @@ func (h *HostedCCEClusterProvisioningTestSuite) TestProvisioningHostedCCE() {
 	}
 
 	for _, tt := range tests {
-		clusterObject, err := provisioning.CreateProvisioningCCEHostedCluster(tt.client)
+		var cceClusterConfig cce.ClusterConfig
+		config.LoadConfig(cce.CCEClusterConfigConfigurationFileKey, &cceClusterConfig)
+
+		clusterObject, err := provisioning.CreateProvisioningCCEHostedCluster(tt.client, cceClusterConfig)
+		reports.TimeoutRKEReport(clusterObject, err)
 		require.NoError(h.T(), err)
 
 		provisioning.VerifyHostedCluster(h.T(), tt.client, clusterObject)

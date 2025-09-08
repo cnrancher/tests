@@ -19,14 +19,14 @@ import (
 )
 
 // CreateProvisioningCCEHostedCluster provisions an CCE cluster, then runs verify checks
-func CreateProvisioningCCEHostedCluster(client *rancher.Client) (*management.Cluster, error) {
+func CreateProvisioningCCEHostedCluster(client *rancher.Client, cceClusterConfig cce.ClusterConfig) (*management.Cluster, error) {
 	cloudCredentialConfig := cloudcredentials.LoadCloudCredential("huawei")
 	cloudCredential, err := huawei.CreateHuaweiCloudCredentials(client, cloudCredentialConfig)
 	if err != nil {
 		return nil, err
 	}
 	clusterName := namegen.AppendRandomString("ccehostcluster")
-	clusterResp, err := cce.CreateCCEHostedCluster(client, clusterName, cloudCredential.ID, false, false, false, false, map[string]string{})
+	clusterResp, err := cce.CreateCCEHostedCluster(client, clusterName, cloudCredential.ID, cceClusterConfig, false, false, false, false, map[string]string{})
 	if err != nil {
 		return nil, err
 	}

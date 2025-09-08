@@ -1,8 +1,8 @@
 module github.com/rancher/tests
 
-go 1.23.4
+go 1.24.0
 
-toolchain go1.23.6
+toolchain go1.24.6
 
 replace (
 	github.com/containerd/containerd => github.com/containerd/containerd v1.6.27 // for compatibilty with docker 20.10.x
@@ -14,7 +14,7 @@ replace (
 	github.com/rancher/rancher => github.com/cnrancher/pandaria v0.0.0-20250606022950-6c99d663158f // PANDARIA
 	github.com/rancher/rancher/pkg/apis => github.com/cnrancher/pandaria/pkg/apis v0.0.0-20241212071329-8023902c76f5 // PANDARIA
 	github.com/rancher/rancher/pkg/client => github.com/cnrancher/pandaria/pkg/client v0.0.0-20250606022950-6c99d663158f // PANDARIA
-	github.com/rancher/shepherd => github.com/cnrancher/shepherd v0.0.0-20250620064708-cc14136eb2be // PANDARIA
+	github.com/rancher/shepherd => github.com/cnrancher/shepherd v0.0.0-20250905081038-a7df5ba066c0 // PANDARIA
 
 	github.com/rancher/tests/actions => ./actions
 	go.opentelemetry.io/contrib/instrumentation/google.golang.org/grpc/otelgrpc => go.opentelemetry.io/contrib/instrumentation/google.golang.org/grpc/otelgrpc v0.53.0
@@ -110,7 +110,7 @@ require (
 	github.com/rancher/gke-operator v1.11.2 // indirect
 	github.com/rancher/lasso v0.2.2 // indirect
 	github.com/rancher/machine v0.15.0-rancher127 // indirect
-	github.com/rancher/norman v0.5.2
+	github.com/rancher/norman v0.6.0
 	github.com/rancher/rke v1.8.3 // indirect
 	github.com/rancher/system-upgrade-controller/pkg/apis v0.0.0-20250306000150-b1a9781accab // indirect
 	github.com/rancher/wrangler v1.1.2 // indirect
