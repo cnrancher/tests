@@ -14,7 +14,7 @@ replace (
 	github.com/rancher/rancher => github.com/cnrancher/pandaria v0.0.0-20250606022950-6c99d663158f // PANDARIA
 	github.com/rancher/rancher/pkg/apis => github.com/cnrancher/pandaria/pkg/apis v0.0.0-20241212071329-8023902c76f5 // PANDARIA
 	github.com/rancher/rancher/pkg/client => github.com/cnrancher/pandaria/pkg/client v0.0.0-20250606022950-6c99d663158f // PANDARIA
-	github.com/rancher/shepherd => github.com/cnrancher/shepherd v0.0.0-20250905081038-a7df5ba066c0 // PANDARIA
+	github.com/rancher/shepherd => github.com/cnrancher/shepherd v0.0.0-20250910061001-009225818e71 // PANDARIA
 
 	github.com/rancher/tests/actions => ./actions
 	go.opentelemetry.io/contrib/instrumentation/google.golang.org/grpc/otelgrpc => go.opentelemetry.io/contrib/instrumentation/google.golang.org/grpc/otelgrpc v0.53.0

@@ -179,6 +179,10 @@ func VerifyCluster(t *testing.T, client *rancher.Client, clustersConfig *cluster
 		VerifyACE(t, adminClient, mgmtClusterObject)
 	}
 
+	// PANDARIA: Relogin
+	client, err = client.ReLogin()
+	require.NoError(t, err)
+
 	podErrors := pods.StatusPods(client, status.ClusterName)
 	assert.Empty(t, podErrors)
 
@@ -217,6 +221,10 @@ func VerifyHostedCluster(t *testing.T, client *rancher.Client, cluster *manageme
 
 	err = nodestat.AllManagementNodeReady(client, cluster.ID, defaults.ThirtyMinuteTimeout)
 	reports.TimeoutRKEReport(cluster, err)
+	require.NoError(t, err)
+
+	// PANDARIA: Relogin
+	client, err = client.ReLogin()
 	require.NoError(t, err)
 
 	podErrors := pods.StatusPods(client, cluster.ID)
