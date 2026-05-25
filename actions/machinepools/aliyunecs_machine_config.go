@@ -21,6 +21,7 @@ type ECSMachineConfig struct {
 	Region               string `json:"region" yaml:"region"`
 	Zone                 string `json:"zone" yaml:"zone"`
 	ImageID              string `json:"imageID" yaml:"imageID"`
+	InstanceChargeType   string `json:"instanceChargeType" yaml:"instanceChargeType"`
 	InstanceType         string `json:"instanceType" yaml:"instanceType"`
 	DiskFS               string `json:"diskFs" yaml:"diskFs"`
 	DiskSize             string `json:"diskSize" yaml:"diskSize"`
@@ -50,6 +51,7 @@ func NewECSMachineConfig(generatedPoolName, namespace string) []unstructured.Uns
 		machineConfig.Object["zone"] = ecsMachineConfig.Zone
 		machineConfig.Object["type"] = ECSPoolType
 		machineConfig.Object["imageId"] = ecsMachineConfig.ImageID
+		machineConfig.Object["instanceChargeType"] = ecsMachineConfig.InstanceChargeType
 		machineConfig.Object["instanceType"] = ecsMachineConfig.InstanceType
 		machineConfig.Object["diskFS"] = ecsMachineConfig.DiskFS
 		machineConfig.Object["diskSize"] = ecsMachineConfig.DiskSize
