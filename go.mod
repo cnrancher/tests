@@ -73,7 +73,6 @@ require (
 	github.com/rancher/rancher v0.0.0-20250228094653-6e82729d08cf
 	github.com/rancher/shepherd v0.0.0-20250314164437-2d4a7f28d9d4
 	github.com/rancher/tests/actions v0.0.0-20250322025624-67c9988afa52
-
 )
 
 require (
