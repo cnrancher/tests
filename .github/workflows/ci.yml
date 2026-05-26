@@ -38,17 +38,25 @@ jobs:
         run: |
           export PATH=$PATH:/home/runner/go/bin/
 
-      - name: Setup GOPRIVATE # PANDARIA
+      - name: Setup GOPRIVATE
+        if: github.event_name != 'pull_request' || github.event.pull_request.head.repo.full_name == github.repository
         env:
           RD_ONLY_GH_TOKEN: ${{ secrets.RD_ONLY_GH_TOKEN }}
         run: |
-          go env -w GOPRIVATE=github.com/cnrancher
-          git config --global url."https://oauth2:${RD_ONLY_GH_TOKEN}@github.com/cnrancher".insteadOf "https://github.com/cnrancher"
+          if [ -z "$RD_ONLY_GH_TOKEN" ]; then
+            echo "RD_ONLY_GH_TOKEN is empty"
+            exit 1
+          fi
+          go env -w GOPRIVATE=github.com/cnrancher/*
+          go env -w GONOSUMDB=github.com/cnrancher/*
+          git config --global url."https://x-access-token:${RD_ONLY_GH_TOKEN}@github.com/".insteadOf "https://github.com/"
 
       - name: Verify Go Mod
+        if: github.event_name != 'pull_request' || github.event.pull_request.head.repo.full_name == github.repository
         run: ./.github/scripts/check-gomod.sh
 
       - name: Build Packages
+        if: github.event_name != 'pull_request' || github.event.pull_request.head.repo.full_name == github.repository
         run: ./.github/scripts/go-build.sh
 
       # PANDARIA: Disable
